@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap</title>
+</head>
+
+<body>
+    <center>
+        <h1>Project-1 Javascript</h1>
+    </center>
+    <div style="border: 5px solid black; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+        class="swap">
+        <h1>Swap</h1>
+        <div>
+            <label for="">Enter First Value of A</label>
+            <input type="number" id="data1">
+        </div>
+        <br>
+        <div>
+            <label for="">Enter First Value of B</label>
+            <input type="number" id="data2">
+        </div>
+        <br>
+        <button onclick="swap()">Swap</button>
+        <div style="border: 1px solid black; width: 40%; height: 50px; margin-top: 20px; display: flex; justify-content: center; align-items: center;"
+            id="swapped">Swap result is show's here</div>
+    </div>
+
+    <div class="div"
+        style="border: 5px solid black; margin-top: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1>Reminder</h1>
+        <div style="display: flex; width: 60%; height: 100px; justify-content: space-evenly; align-items: center;">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label style="margin-bottom: 10px;" for=""><b>Enter Number</b></label>
+                <input type="number" id="reminder1">
+            </div>
+            <span style="font-size: 20px; font-weight: bold;">/</span>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label style="margin-bottom: 10px;" for=""><b>Divided By</b></label>
+                <input type="number" id="reminder2">
+            </div>
+            <button onclick="reminder()">=</button>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label style="margin-bottom: 10px;" for=""><b>Reminder</b></label>
+                <div style="border: 1px solid black; width: 100px; height: 21px; display: flex; justify-content: center; align-items: center;"
+                    id="reminderans"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="border: 5px solid black; margin-top: 20px; display: flex; flex-direction: column; align-items: center; padding: 30px;">
+        <h1>Sum of square</h1>
+        <div style="display: flex; justify-content: space-evenly; align-items: center; height: 100px; width: 1000px;">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label for="" style="font-weight: bold; margin-bottom: 10px;">First Value</label>
+                <input type="number" id="square1">
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label for="" style="font-weight: bold; margin-bottom: 10px;">Second Value</label>
+                <input type="number" id="square2">
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <label for="" style="font-weight: bold; margin-bottom: 10px;">Third Value</label>
+                <input type="number" id="square3">
+            </div>
+        </div>
+        <button onclick="square()">Sum of Square</button>
+        <div style="border: 1px solid black; width: 150px; height: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 10px;" id="square_sum"></div>
+    </div>
+
+    <div style="border: 5px solid black; margin-top: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px;">
+        <h1>Leap Year</h1>
+        <label style="margin-bottom: 10px;" for="">Enter Year</label>
+        <input style="margin-bottom: 10px;" type="number" id="leap">
+        <button style="margin-bottom: 10px;" onclick="leap()">Click</button>
+        <label style="margin-bottom: 10px;" for="">Answer in True or False</label>
+        <div style="border: 2px solid black; width: 150px; height: 25px; display: flex; justify-content: center; align-items: center;" id="leapans"></div>
+    </div>
+</body>
+<script src="file.js"></script>
+</html>
