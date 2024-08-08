@@ -1,0 +1,88 @@
+.main1 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main1 input {
+    margin-bottom: 20px;
+}
+
+.main2 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.main2 input {
+    margin-bottom: 20px;
+}
+
+.main3 {
+    border: 5px solid black;
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main3 input {
+    margin-bottom: 20px;
+}
+
+.main4 {
+    border: 5px solid black;
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main4 input {
+    margin-bottom: 20px;
+}
+
+.main4 .ans {
+    border: 1px solid black;
+    width: 20%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.main5 {
+    border: 5px solid black;
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main5 button {
+    margin-top: 20px;
+}
+
+.tri {
+    border: 1px solid black;
+    width: 20%;
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

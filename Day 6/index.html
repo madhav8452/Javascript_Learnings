@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main1">
+        <h1>Season</h1>
+        <p>Enter Month</p>
+        <input type="text" id="month">
+        <button onclick="month()">Click</button>
+        <p id="message"></p>
+    </div>
+
+    <div class="main2">
+        <h1>Is Vowel?</h1>
+        <p>Enter Character</p>
+        <input type="text" id="vowel">
+        <button onclick="vowel()">Click</button>
+        <p id="vowelmsg"></p>
+    </div>
+
+    <div class="main3">
+        <h1>Age</h1>
+        <p>Enter Your Age</p>
+        <input type="text" id="age">
+        <button onclick="age()">Click</button>
+        <p id="agemsg"></p>
+    </div>
+
+    <div class="main4">
+        <h1>Calculator</h1>
+        <input type="text" id="first" placeholder="First Value">
+        <input type="text" id="second" placeholder="Second Value">
+        <p>Enter</p>
+        <input type="text" id="maths" placeholder="+ - * / %">
+        <button onclick="calculator()">Answer</button>
+        <div class="ans">
+            <p id="ansmsg"></p>
+        </div>
+    </div>
+    
+    <div class="main5">
+        <h1>Triangle</h1>
+        <ul>
+            <li>Equilateral: All sides are equal.</li>
+            <li>Isosceles: At least two sides are equal.</li>
+            <li>Scalene: No sides are equal.</li>
+        </ul>
+        <p>Enter Side 1</p>
+        <input type="text" id="side1">
+        <p>Enter Side 2</p>
+        <input type="text" id="side2">
+        <p>Enter Side 3</p>
+        <input type="text" id="side3">
+        <button onclick="triangle()">Check Triangle Type</button>
+        <div class="tri">
+            <p id="anstriangle"></p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
