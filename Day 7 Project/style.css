@@ -1,0 +1,135 @@
+.main1 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main1 input {
+    margin-bottom: 10px;
+}
+
+.main1 .resultans {
+    border: 1px solid black;
+    width: 30%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main2 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main2 input {
+    margin-bottom: 10px;
+}
+
+.main2 .leapyear {
+    border: 1px solid black;
+    width: 30%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main3 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main3 input {
+    margin-bottom: 10px;
+}
+
+.main3 .angle {
+    border: 1px solid black;
+    width: 30%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main4 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main4 input {
+    margin-bottom: 10px;
+}
+
+.main4 .amount {
+    border: 1px solid black;
+    width: 50%;
+    height: 200px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main4 .amount p {
+    margin: 0;
+    padding: 0;
+}
+
+.main4 .amount #erroramount {
+    text-align: center;
+    /* display: none; */
+}
+
+.main4 .amount #original {
+    margin-top: 10px;
+}
+
+.main5 {
+    border: 5px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main5 .traffic {
+    border: 1px solid black;
+    width: 30%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.main5 input {
+    margin-bottom: 10px;
+}
