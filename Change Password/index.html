@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+    <link href="https://db.onlinewebfonts.com/c/e721330050ecfe81b4e5455e1a308181?family=Billabong" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="front" data-aos="zoom-in">
+            <h1 class="head">Change Password</h1>
+
+            <div class="currentpass">
+                <label for="">Enter Password</label>
+                <input type="password" placeholder="Current Password" id="currentpass">
+            </div>
+
+            <button onclick="currentpassword()" id="btn1">Confirm</button>
+
+            <div id="newpassword">
+                <input type="password" placeholder="New Password" id="newpass">
+                <button onclick="changepassword()" id="btn2">Change Password</button>
+            </div>
+
+            <div class="errordiv">
+                <p id="errormessage">Enter Current Password</p>
+            </div>    
+        </div>
+
+        <div class="back" data-aos="zoom-in">
+            <h1 class="head">Log in</h1>
+            <div id="logindiv">
+                <label for="">Username</label>
+                <input type="text" placeholder="Enter Username" id="username">
+                <label for="">Password</label>
+                <input type="password" placeholder="Enter Password" id="password">
+            </div>
+
+            <button onclick="login()" id="btn3">Login</button>
+
+            <div class="login_errordiv">
+                <p id="loginerrormessage">Password Changed Successfully!</p>
+            </div>    
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="password.js"></script>
+<script>
+    AOS.init();
+</script>
+</html>
