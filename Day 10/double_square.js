@@ -1,18 +1,19 @@
 function double(num)
 {
-    let double = num * 2;
-    return double;
+    return num * 2;
 }
+
 function square(num)
 {
-    return num 
+    return num * num;
 }
-function doublesquare(num)
+
+function doublesquare(number)
 {
-
+    let a = double(number);
+    let result = square(a);
+    
+    console.log(result);
 }
-double();
 
-square();
-
-let result = doublesquare(3);
+doublesquare(3);
