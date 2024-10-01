@@ -4,6 +4,8 @@ function calculateArea(length){
     return length * length;
 }
 
-let area = array.map(calculateArea);
+let area = array.map((num) => {
+    return calculateArea(num);
+});
 
 console.log(area);
