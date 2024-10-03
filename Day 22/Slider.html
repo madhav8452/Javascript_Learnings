@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+</style>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    let arr = [
+        "Images/1.webp",
+        "Images/2.webp",
+        "Images/3.webp",
+        "Images/4.webp",
+        "Images/5.webp",
+    ]
+
+    let a = 0;
+    let stopInterval = setInterval(()=>{
+        if(a >= arr.length)
+        {
+            a = 0;
+            clearInterval(stopInterval);
+        }
+        else
+        {
+            document.getElementById("box").innerHTML = `<img src="${arr[a]}">`;
+            a++;
+        }
+}, 1500);
+</script>
+</html>
