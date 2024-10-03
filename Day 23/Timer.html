@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainbox{
+            border: 1px solid black;
+            width: 80%;
+            height: 400px;
+            display: flex;
+        }
+
+        /* Timer css */
+        .mainbox #timer {
+            border: 1px solid black;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainbox #timer h1{
+            margin-bottom: 40px;
+        }
+
+        .mainbox #timer #Tresult{
+            border: 3px solid black;
+            width: 50%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .mainbox #timer #Tstart{
+            width: 100px;
+            height: 40px;
+        }
+
+        .mainbox #timer #Tstop{
+            width: 100px;
+            height: 40px;
+        }
+
+        .mainbox #timer #Treset{
+            width: 100px;
+            height: 40px;
+        }
+
+        /* Stopwatch css */
+        .mainbox #stopwatch {
+            border: 1px solid black;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainbox #stopwatch h1{
+            margin-bottom: 40px;
+        }
+
+        .mainbox #stopwatch #time{
+            width: 50%;
+            height: 40px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        .mainbox #stopwatch #Sresult{
+            border: 3px solid black;
+            width: 50%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .mainbox #stopwatch #Sstart{
+            width: 100px;
+            height: 40px;
+        }
+
+        .mainbox #stopwatch #Sstop{
+            width: 100px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainbox">
+        <div id="timer">
+            <h1>Timer</h1>
+            <div id="Tresult">0</div>
+            <div>
+                <button id="Tstart">Start</button>
+                <button id="Tstop">Stop</button>
+                <button id="Treset">Reset</button>
+            </div>
+        </div>
+        <div id="stopwatch">
+            <h1>Stopwatch</h1>
+            <input id="time" placeholder="Enter Time">
+            <div id="Sresult"></div>
+            <div>
+                <button id="Sstart">Start</button>
+                <button id="Sstop">Stop</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //Timer script
+
+    let a = 0;
+    let clear;
+
+    document.getElementById("Tstart").addEventListener("click", ()=>{
+        clear = setInterval(()=>{
+            a++;
+            document.getElementById("Tresult").innerText = a;
+        },1000)
+    })
+
+    document.getElementById("Tstop").addEventListener("click", ()=>{
+        clearInterval(clear);
+    })
+
+    document.getElementById("Treset").addEventListener("click", ()=>{
+        a = 0;
+        document.getElementById("Tresult").innerText = a;
+    })
+
+    //Stopwatch script
+
+    let sClear;
+
+    document.getElementById("Sstart").addEventListener("click", ()=>{
+        let stored = Number(document.getElementById("time").value);
+        let b = stored;
+
+        sClear = setInterval(() => {
+            if(b == 0){
+                clearInterval(sClear);
+            }
+            else{
+                b--;
+                document.getElementById("Sresult").innerText = b;
+            }
+        }, 1000);
+    })
+
+    document.getElementById("Sstop").addEventListener("click", ()=>{
+        clearInterval(sClear);
+    })
+</script>
+</html>
