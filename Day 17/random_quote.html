@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            border: 5px solid black;
+            width: 800px;
+            height: 600px;
+            border-radius: 20px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box h1{
+            margin-bottom: 30px;
+        }
+        .box #quote{
+            border: 3px solid black;
+            width: 90%;
+            height: 200px;
+            padding: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box #quote h4{
+            margin-bottom: 20px;
+        }
+        .box #change{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Random Quote Generator</h1>
+        <div id="quote"></div>
+        <button id="change">Click</button>
+    </div>
+</body>
+<script>
+    document.getElementById("change").addEventListener("click",()=>{
+
+        let array = [
+            {   quote : "Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking. Don’t let the noise of other’s opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.",
+                name : "- Steve Jobs"
+            },
+
+            {
+                quote : "My biggest motivation? Just to keep challenging myself. I see life almost like one long University education that I never had -- everyday I’m learning something new.",
+                name : "- Richard Branson"
+            },
+
+            {
+                quote : "Every time you state what you want or believe, you’re the first to hear it. It’s a message to both you and others about what you think is possible. Don’t put a ceiling on yourself.",
+                name : "- Oprah Winrey"
+            },
+
+            {
+                quote : "It’s fine to celebrate success but it is more important to heed the lessons of failure.",
+                name : "- Bill Gates"
+            },
+
+            {
+                quote : "It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.",
+                name : "- Warren Buffett"
+            },
+
+            {
+                quote : "One of the huge mistakes people make is that they try to force an interest on themselves. You don't choose your passions; your passions choose you.",
+                name : "- Jeff Bezos"
+            },
+
+            {
+                quote : "I have not failed. I’ve just found 10,000 ways that won’t work.",
+                name : "- Thomas Edison"
+            },
+
+            {
+                quote : "Logic will get you from A to B. Imagination will take you everywhere.",
+                name : "- Albert Einestein"
+            },
+
+            {
+                quote : "Genius is 1% inspiration, and 99% perspiration.",
+                name : "- Thomas Edison"
+            },
+
+            {
+                quote : "Your most unhappy customers are your greatest source of learning.",
+                name : "- Bill Gates"
+            }
+        ]
+
+        let random = Math.floor(Math.random() * array.length);
+
+        document.getElementById("quote").innerHTML = `<h4>${array[random].quote}</h4> <p>${array[random].name}</p>`;
+    })
+</script>
+</html>
