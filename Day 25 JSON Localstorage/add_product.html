@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Products</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: black; */
+        }
+        .box{
+            /* border: 5px solid black; */
+            width: 30%;
+            height: 650px;
+            border-radius: 30px;
+            background-color: white;
+            box-shadow: inset 0 0 10px black;
+        }
+        .box form{
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        .box form h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .box form label{
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .box form input{
+            border: none;
+            border-bottom: 1px solid black;
+            height: 40px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background: transparent;
+        }
+        .box form input:hover{
+            border: 1px solid black;
+        }
+        .box form #gender{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .box form #gender input{
+            margin: 0;
+            margin-left: 20px;
+        }
+        .box form #gender input::placeholder{
+            color: whitesmoke;
+        }
+        .box form #btn{
+            border: 2px solid black;
+            background-color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: all 0.5s;
+            padding: 0;
+        }
+        .box form #btn:hover{
+            background-color: black;
+            color: white;
+        }
+        .box form a{
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            transition: 0.5s;
+        }
+        .box form a:hover{
+            text-shadow: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="" id="form">
+            <h1>Add-Products</h1>
+            <label for="">Title</label>
+            <input type="text" placeholder="Enter Product Title" id="title">
+            <label for="">Price</label>
+            <input type="text" placeholder="Enter Product Price" id="price">
+            <label for="">Description</label>
+            <input type="text" placeholder="Enter Product Description" id="des">
+            <label for="">Image</label>
+            <input type="text" placeholder="Enter Product Image URL" id="img">
+            <label for="">Gender</label>
+            <div id="gender">
+                <input type="radio" id="man" name="gender">Man
+                <input type="radio" id="woman" name="gender">Woman
+            </div>
+            <input type="submit" id="btn">
+            <a href="products.html">Products</a>
+        </form>
+    </div>
+</body>
+<script>
+    let arr = [];
+
+    document.getElementById("form").addEventListener("submit", (m)=>{
+        m.preventDefault();
+
+        let obj = {
+            title : document.getElementById("title").value,
+            price : document.getElementById("price").value,
+            des : document.getElementById("des").value,
+            img : document.getElementById("img").value,
+            gender : document.getElementById("man").checked = true ? "Man" : "Woman"
+        }
+
+        arr.push(obj);
+        localStorage.setItem("products", JSON.stringify(arr));
+        console.log(arr);
+    })
+</script>
+</html>

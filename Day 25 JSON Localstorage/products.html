@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #box{
+            width: 100%;
+            padding: 90px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        #box #card{
+            border: 1px solid black;
+            width: 300px;
+            height: 550px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px black;
+            padding: 20px;
+        }
+        #box #card #image{
+            width: 100%;
+        }
+        #box #card #image img{
+            width: 100%;
+            height: 100%;
+        }
+        #box #card #title{
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #box #card #price{
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #box #card #des{
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #box #card #gender{
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        #box #card #btndiv{
+            margin-top: 20px;
+        }
+        #box #card #btndiv #editbtn{
+            width: 80px;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: white;
+            box-shadow: 0 0 5px black;
+            transition: 0.5s;
+        }
+        #box #card #btndiv #editbtn:hover{
+            background-color: black;
+            color: white;
+        }
+        #box #card #btndiv #delbtn{
+            width: 80px;
+            height: 30px;
+            border: 2px solid brown;
+            color: brown;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-weight: bold;
+            background-color: white;
+            box-shadow: 0 0 5px brown;
+            transition: 0.5s;
+        }
+        #box #card #btndiv #delbtn:hover{
+            background-color: brown;
+            color: white;
+        }
+        #a{
+            border: 1px solid black;
+            width: 20%;
+            height: 50px;
+            background-color: black;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            transition: 0.5s;
+        }
+        #a:hover{
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+        }
+        #a a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+        #a:hover a{
+            color: black;
+        }
+        #editData{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            position: fixed;
+            top: 0;
+            opacity: 0;
+            transform: translatey(-100vh);
+            transition: 0.5s;
+        }
+        #editData form{
+            border: 5px solid black;
+            border-radius: 20px;
+            width: 450px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            background-color: white;
+            position: relative;
+        }
+        #editData form i{
+            border: 2px solid black;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        #editData form h1{
+            text-align: center;
+        }
+        #editData form label{
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        #editData form input{
+            border: none;
+            border-bottom: 1px solid black;
+            height: 40px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: transparent;
+        }
+        #editData form input:hover{
+            border: 1px solid black;
+        }
+        #editData form #gender{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #editData form #gender input{
+            margin: 0;
+            margin-left: 20px;
+        }
+        #editData form #gender input::placeholder{
+            color: whitesmoke;
+        }
+        #editData form #btn{
+            border: 2px solid black;
+            background-color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: all 0.5s;
+            padding: 0;
+        }
+        #editData form #btn:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="editData">
+        <form action="" id="form">
+            <i class="fa-solid fa-xmark" id="icon"></i>
+            <h1>Edit-Products</h1>
+            <label for="">Title</label>
+            <input type="text" placeholder="Enter Product Title" id="title">
+            <label for="">Price</label>
+            <input type="text" placeholder="Enter Product Price" id="price">
+            <label for="">Description</label>
+            <input type="text" placeholder="Enter Product Description" id="des">
+            <label for="">Image</label>
+            <input type="text" placeholder="Enter Product Image URL" id="img">
+            <label for="">Gender</label>
+            <div id="gender">
+                <input type="radio" id="man" name="gender">Man
+                <input type="radio" id="woman" name="gender">Woman
+            </div>
+            <input type="submit" id="btn">
+        </form>
+    </div>
+    <div id="box"></div>
+    <button id="a">
+        <a href="add_product.html">ADD-PRODUCTS</a>
+    </button>
+</body>
+<script>
+    let products = JSON.parse(localStorage.getItem("products"));
+    console.log(products);
+
+    document.getElementById("box").innerHTML = view();
+
+    function view(){
+        return products.map((el,Index)=>{
+            return `<div id="card">
+                        <div id="image">
+                            <img src="${el.img}">
+                        </div>
+                        <p id="title">${el.title}</p>
+                        <p id="price">Price - Rs.${el.price}</p>
+                        <p id="des">${el.des}</p>
+                        <p id="gender">Gender - ${el.gender}</p>
+                        <div id="btndiv">
+                            <button id="editbtn" onclick="editData(${Index})">Edit</button>
+                            <button id="delbtn" onclick="deleteData(${Index})">Delete</button>
+                        </div>
+                    </div>`
+        }).join("");
+    }
+
+    function deleteData(Index){
+        products.splice(Index,1);
+        localStorage.setItem("products", JSON.stringify(products));
+        window.location.href = "products.html";
+    }
+
+    document.getElementById("icon").addEventListener("click", ()=>{
+        document.getElementById("editData").style.opacity = "0";
+        document.getElementById("editData").style.transform = "translatey(-100vh)";
+    })
+
+    function editData(Index){
+        document.getElementById("editData").style.opacity = "1";
+        document.getElementById("editData").style.transform = "translatey(0)";
+        
+        console.log(Index)
+        if(Index != null){
+            document.getElementById("title").value = products[Index].title;
+            document.getElementById("price").value = products[Index].price;
+            document.getElementById("des").value = products[Index].des;
+            document.getElementById("img").value = products[Index].img;
+            if(products[Index].gender == "Man"){
+                document.getElementById("man").checked = true;
+            }
+            else{
+                document.getElementById("woman").checked = true;
+            }
+        }
+        
+        document.getElementById("form").addEventListener("submit", (e)=>{
+            e.preventDefault;
+            let obj = {
+                title : document.getElementById("title").value,
+                price : document.getElementById("price").value,
+                des : document.getElementById("des").value,
+                img : document.getElementById("img").value,
+                gender : document.getElementById("man").checked == true ? "Man" : "Woman"
+            }
+
+            products[Index] = obj;
+            localStorage.setItem("products", JSON.stringify(products));
+
+            document.getElementById("editData").style.opacity = "0";
+            document.getElementById("editData").style.transform = "translatey(-100vh)";
+        })
+    }
+
+</script>
+</html>
