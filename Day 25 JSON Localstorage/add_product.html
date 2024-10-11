@@ -112,7 +112,7 @@
     </div>
 </body>
 <script>
-    let arr = [];
+    let arr = JSON.parse(localStorage.getItem("products")) || [];
 
     document.getElementById("form").addEventListener("submit", (m)=>{
         m.preventDefault();
