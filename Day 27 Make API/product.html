@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #box{
+            width: 100%;
+            height: 3000px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #box #card{
+            width: 22%;
+            height: 550px;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 20px;
+            box-shadow: inset 0 0 10px black;
+        }
+        #box #card #img{
+            width: 100%;
+            height: 350px;
+        }
+        #box #card #img img{
+            width: 100%;
+            height: 100%;
+        }
+        #box #card #title{
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #box #card #price{
+            font-weight: bold;
+            color: brown;
+            margin-top: 10px;
+        }
+        #box #card #cat{
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    fetch("http://localhost:3000/Products")
+    .then((res)=>{
+        return res.json();
+    })
+    .then((res)=>{
+        console.log(res);
+        document.getElementById("box").innerHTML = view(res);
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+
+    function view(res){
+        return res.map((el)=>{
+            return `<div id="card">
+                        <div id="img">
+                            <img src="${el.image}">
+                        </div>
+                        <p id="title">${el.title}</p>
+                        <p id="price">Price - ${el.price}</p>
+                        <p id="cat">Category - ${el.category}</p>
+                    </div>`
+        }).join("");
+    }
+</script>
+</html>
