@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(Images/1360720.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #signupf{
+            width: 500px;
+            height: 650px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            backdrop-filter: blur(100px);
+            box-shadow: 0 0 10px black;
+            transform: scale(0);
+            transition: 1s;
+        }
+
+        #signupf h1{
+            margin-bottom: 60px;
+        }
+
+        #signupf .box{
+            width: 70%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+        }
+
+        #signupf .box label{
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #signupf .box input{
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            width: 100%;
+            height: 40px;
+            background: transparent;
+            border-radius: 10px;
+            padding-left: 20px;
+            transition: 1s;
+        }
+
+        #signupf .box input:hover{
+            border: 1px solid black;
+        }
+
+        #signupf .box input::placeholder{
+            font-size: 10px;
+            color: black;
+        }
+
+        #signupf .box #wrongUsername{
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        #signupf .box #wrongEmail{
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        #signupf .box #wrongPassword{
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        #signupf #signupSubmit{
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        #signupf #signupSubmit{
+            border: 1px solid black;
+            background: transparent;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        #signupf #signupSubmit:hover{
+            color: white;
+        }
+
+        #signupf #signupSubmit::before{
+            content: "";
+            width: 100%;
+            height: 0;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        #signupf #signupSubmit:hover::before{
+            height: 100%;
+        }
+
+        #signupf #gotoLogin{
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: 0.5s;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        #signupf #gotoLogin:hover{
+            transform: translatey(-5px);
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="signupf">
+        <div class="box">
+            <h1>Sign Up</h1>
+            <label for="">Username</label>
+            <input type="text" id="userName" placeholder="Enter username">
+            <p id="wrongUsername"></p>
+            <label for="">Email</label>
+            <input type="text" id="email" placeholder="Enter email">
+            <p id="wrongEmail"></p>
+            <label for="">Password</label>
+            <input type="text" id="password" placeholder="Enter password">
+            <p id="wrongPassword"></p>
+        </div>
+
+        <button id="signupSubmit">Submit</button>
+        <a href="login.html" id="gotoLogin">Already have an account? Login</a>
+    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $("#signupf").css("transform", "scale(1)");
+    })
+</script>
+<script>
+    document.getElementById("signupf").addEventListener("submit", (e)=>{
+        e.preventDefault();
+
+        let username = document.getElementById("userName").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let isValid = true;
+        document.getElementById("wrongUsername").innerText = ``;
+        document.getElementById("wrongEmail").innerText = ``;
+        document.getElementById("wrongPassword").innerText = ``;
+
+        let userRegex = /^[0-9A-Za-z]{6,16}$/
+        if(username == 0){
+            document.getElementById("wrongUsername").innerText = `*Username must not be Empty.`
+            isValid = false;
+        }
+        else{
+            if(!userRegex.test(username)){
+                document.getElementById("wrongUsername").innerText = `*Username should be numeric,uppercase & lowercase.`;
+                isValid = false;
+            }
+            else{
+                document.getElementById("wrongUsername").innerText = `Username is valid.`;
+                document.getElementById("wrongUsername").style.color = `greenyellow`;
+            }
+        }
+
+        let emailRegex = /[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/
+        if(email == 0){
+            document.getElementById("wrongEmail").innerText = `*Email must not be Empty.`;
+            isValid = false;
+        }
+        else{
+            if(!emailRegex.test(email)){
+                document.getElementById("wrongEmail").innerText = `*Email is not valid.`;
+                isValid = false;
+            }
+            else{
+                document.getElementById("wrongEmail").innerText = `Email is valid.`;
+                document.getElementById("wrongEmail").style.color = `greenyellow`;
+            }
+        }
+
+        let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-+.]).{6,20}$/
+        if(password == 0){
+            document.getElementById("wrongPassword").innerText = `*Password must not be Empty.`;
+            isValid = false;
+        }
+        else{
+            if(!passwordRegex.test(password)){
+                document.getElementById("wrongPassword").innerText = `*Password must be between 6 to 20 characters long & contain uppercase,lowercase & special Characters.`
+                isValid = false;
+            }
+            else{
+                document.getElementById("wrongPassword").innerText = `Password is valid.`;
+                document.getElementById("wrongPassword").style.color = `greenyellow`;
+            }
+        }
+
+        if(isValid){
+            let obj = {
+                username : username,
+                email : email,
+                password : password
+            }
+
+            fetch(`http://localhost:3000/users`,{
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify(obj)
+            })
+            .then((res)=>{
+                return res.json();
+            })
+            .then((res)=>{
+                console.log(res);
+                Swal.fire({
+                    title: "Thank You!",
+                    text: "Form successfully created.",
+                    icon: "success"
+                });
+            })
+        }
+    })
+</script>
+</html>
