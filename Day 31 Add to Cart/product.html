@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 3100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #box{
+            width: 100%;
+            height: 3000px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #box a{
+            width: 22%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+            padding: 50px;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        #box a:hover{
+            box-shadow: 0 0 1px black;
+        }
+        #box a #card #image{
+            width: 100%;
+            height: 250px;
+            display: flex;
+        }
+        #box a #card #image img{
+            width: 100%;
+            height: 100%;
+        }
+        #box a #card #title{
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: black;
+        }
+        #box a #card #price{
+            color: brown;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #cart{
+            border: 1px solid black;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        #cart:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="cart">Cart</button>
+</body>
+<script>
+    function fetchData(){
+        fetch("http://localhost:3000/Product")
+        .then((res)=>{
+            return res.json();
+        })
+        .then((res)=>{
+            console.log(res);
+            document.getElementById("box").innerHTML = view(res);
+        })
+        .catch((error)=>{
+            alert(error);
+        })
+    }
+
+    function view(res){
+        return res.map((el)=>{
+            return `<a href="singleProduct.html?id=${el.id}" target="_blank">
+                        <div id="card">
+                            <div id="image">
+                                <img src="${el.image}">
+                            </div>
+                            <p id="title">${el.title}</p>
+                            <p id="price">Price - ${el.price}</p>
+                        </div>
+                    </a>`
+        }).join("");
+    }
+
+    fetchData();
+
+    document.getElementById("cart").addEventListener("click", ()=>{
+        window.location.href = "cart.html"
+    })
+</script>
+</html>

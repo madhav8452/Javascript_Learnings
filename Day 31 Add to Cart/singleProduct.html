@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            width: 80%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+        }
+        #box #image{
+            width: 50%;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box #image img{
+            width: 80%;
+            height: 80%;
+        }
+        #box #details{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px;
+        }
+        #box #details #title{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #box #details #price{
+            color: brown;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #box #details #des{
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #box #details #category{
+            color: blueviolet;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #box #details #cart{
+            border: 1px solid black;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            background-color: white;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #box #details #cart:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    function fetchData(){
+        let a = new URLSearchParams(window.location.search)
+
+        let id = a.get("id")
+        
+        fetch(`http://localhost:3000/Product/${id}`)
+        .then((res)=>{
+            return res.json();
+        })
+        .then((res)=>{
+            console.log("id -",res.id.length);
+            document.getElementById("box").innerHTML = view(res);
+
+            document.getElementById("cart").addEventListener("click", ()=>{
+                fetch("http://localhost:3000/Cart")
+                .then((cart)=>{
+                    return cart.json();
+                })
+                .then((cart)=>{
+                    console.log(cart);
+
+                    let existID = cart.find((item)=>{
+                        return item.id == res.id
+                    })
+
+                    if(existID){
+                        alert("Item already exist in Cart");
+                    }
+                    else{
+                        fetch(`http://localhost:3000/Cart`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(res),
+                        })
+                        alert("Added to Cart");
+                    }
+                });
+            });
+        });
+    };
+
+    function view(res){
+        return `<div id="image">
+                    <img src="${res.image}">
+                </div>
+                <div id="details">
+                    <p id="title">${res.title}</p>
+                    <p id="price">Price - ${res.price}</p>
+                    <p id="des">${res.description}</p>
+                    <p id="category">Category - ${res.category}</p>
+                    <button id="cart">Add to Cart</button>
+                </div>`
+    }
+
+    fetchData();
+</script>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        #box {
+            border: 3px solid black;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+        }
+        #box table{
+            width: 100%;
+            padding: 30px;
+        }
+        #box table tr{
+            width: 100%;
+
+        }
+        #box table tr td{
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #box table tr td img{
+            width: 100%;
+            height: 100%;
+        }
+        #box hr{
+            border: 3px solid black;
+        }
+        #total{
+            margin-top: 50px;
+        }
+        #product{
+            border: 1px solid black;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            background-color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #product:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart</h1>
+    <div id="box"></div>
+    <div id="total"></div>
+    <button id="product">Products</button>
+</body>
+<script>
+    fetch("http://localhost:3000/Cart")
+    .then((res)=>{
+        return res.json();
+    })
+    .then((res)=>{
+        console.log(res);
+        document.getElementById("box").innerHTML = view(res);
+        document.getElementById("total").innerHTML = `<h3>Total = ${Math.floor(total)}</h3>`;
+    })
+    .catch((error)=>{
+        alert(error);
+    })
+
+    let n = 1;
+    let total = 0;
+
+    function view(res){
+        return res.map((el)=>{
+            Math.floor(total += el.price);
+            return `<table>
+                        <tr>
+                            <td>${n++}</td>
+                            <td>${el.title}</td>
+                            <td><img src="${el.image}"></td>
+                            <td>Rs. ${el.price}</td>
+                        </tr>
+                    </table>
+                    <hr>`
+        }).join("");
+    }
+
+    document.getElementById("product").addEventListener("click", ()=>{
+        window.location.href = "product.html"
+    })
+</script>
+</html>
