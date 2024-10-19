@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link href="https://db.onlinewebfonts.com/c/516cb00d15c3cb6c79d49d7e2ccff927?family=Alef" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+        }
+        #bars{
+            border: 1px solid white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            color: white;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #bars:hover{
+            background-color: white;
+            color: black;
+        }
+        h1{
+            font-family: "Alef";
+            color: white;
+            margin-bottom: 60px;
+        }
+        #search{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #search input{
+            border: 1px solid white;
+            font-family: "Alef";
+            width: 89%;
+            height: 100%;
+            padding-left: 30px;
+            border-radius: 10px;
+            background-color: transparent;
+            color: white;
+        }
+        #search button{
+            border: 1px solid white;
+            color: white;
+            width: 10%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #search button:hover{
+            background-color: white;
+            color: black;
+        }
+        #search button i{
+            margin-right: 10px;
+        }
+        #box{
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        #box #card{
+            width: 17%;
+            height: 550px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 40px;
+            background-color: #27272A;
+        }
+        #box #card #image{
+            width: 100%;
+            height: 400px;
+        }
+        #box #card #image img{
+            width: 100%;
+            height: 100%;
+        }
+        #box #card #details{
+            width: 100%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        #box #card #title{
+            font-family: "Alef";
+            color: white;
+            font-weight: bold;
+        }
+        #box #card #year{
+            font-family: "Alef";
+            color: white;
+            font-weight: bold;
+        }
+
+        #offCanvas{
+            width: 300px;
+            height: 100vh;
+            background-color: #27272A;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 10px 10px 0;
+            transform: translatex(-300px);
+            transition: 1s;
+        }
+        #offCanvas #icon{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+        #offCanvas #close{
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        #offCanvas #cat{
+            width: 100%;
+            height: 200px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #offCanvas #cat h4{
+            font-family: "Alef";
+            color: darkgoldenrod;
+            margin-bottom: 10px;
+        }
+        #offCanvas #cat label{
+            font-family: "Alef";
+            font-size: 13px;
+            color: white;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        #offCanvas #cat label input{
+            margin-right: 10px;
+        }
+
+        #offCanvas #year{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #offCanvas #year h4{
+            font-family: "Alef";
+            color: darkgoldenrod;
+            margin-bottom: 10px;
+        }
+        #offCanvas #year select{
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 10px;
+            background-color: black;
+            width: 200px;
+            height: 40px;
+            padding: 0 10px 0 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-bars" id="bars"></i>
+    <h1>MOVIES.COM</h1>
+    <div id="search">
+        <input id="searchmovie" placeholder="Enter Movie Name">
+        <button id="find"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </div>
+    <div id="filter">
+
+    </div>
+    <div id="box"></div>
+
+    <div id="offCanvas">
+        <div id="icon">
+            <i class="fa-solid fa-xmark" id="close"></i>
+        </div>
+        <div id="cat">
+            <h4>Category</h4>
+            <label for="">
+                <input type="checkbox" id="movies">Movies
+            </label>
+            <label for="">
+                <input type="checkbox" id="series">Series
+            </label>
+            <label for="">
+                <input type="checkbox" id="episode">Episode
+            </label>
+        </div>
+        <div id="year">
+            <h4>Year</h4>
+            <select name="" id="selectyear">
+                <option value="year" selected>Select Year</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("bars").addEventListener("click",()=>{
+        document.getElementById("offCanvas").style.transform = "translatex(0)"
+    })
+
+    document.getElementById("close").addEventListener("click", ()=>{
+        document.getElementById("offCanvas").style.transform = "translatex(-300px)"
+    })
+
+    document.getElementById("movies").addEventListener("change",()=>{
+        let val = document.getElementById("searchmovie").value || "spider"
+        let movies = document.getElementById("movies").checked;
+        let year = document.getElementById("selectyear").value || "year"
+
+        if(movies){
+            let category = "movie"
+            fetchData(val, category, year)
+        }
+        else{
+            let category = "movie"
+            fetchData(val, category, year)
+        }
+    })
+
+    document.getElementById("series").addEventListener("change",()=>{
+        let val = document.getElementById("searchmovie").value || "spider"
+        let series = document.getElementById("series").checked;
+        let year = document.getElementById("selectyear").value || "year"
+
+        if(series){
+            let category = "series"
+            fetchData(val, category, year)
+        }
+        else{
+            let category = "movie"
+            fetchData(val, category, year)
+        }
+    })
+
+    document.getElementById("episode").addEventListener("change",()=>{
+        let val = document.getElementById("searchmovie").value || "spider"
+        let episode = document.getElementById("episode").checked;
+        let year = document.getElementById("selectyear").value || "year"
+
+        if(episode){
+            let category = "episode"
+            fetchData(val, category, year)
+        }
+        else{
+            let category = "movie"
+            fetchData(val, category, year)
+        }
+    })
+
+    document.getElementById("selectyear").addEventListener("change",()=>{
+        let val = document.getElementById("searchmovie").value || "spider"
+        let category = "movie"
+        let year = document.getElementById("selectyear").value || "year"
+        
+        fetchData(val, category, year)
+    })
+
+
+    document.getElementById("find").addEventListener("click",()=>{
+        let val = document.getElementById("searchmovie").value
+        let category = "movie"
+        let year = document.getElementById("selectyear").value || "year"
+        
+        fetchData(val, category, year)
+    })
+    
+    function fetchData(val="spider", category="movie", year="year"){
+        console.log(val)
+        console.log(category)
+        console.log(year)
+        fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=bd31f3e2&s=${val}&type=${category}&y=${year}`)
+        .then((res)=>{
+            return res.json();
+        })
+        .then((res)=>{
+            console.log(res);
+            if(res.Response == "False")
+            {
+                document.getElementById("box").innerHTML = `<h1>Movie not found</h1>`
+            }
+            else{
+                document.getElementById("box").innerHTML = view(res.Search);
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
+
+    fetchData();
+
+    function view(res){
+        return res.map((el)=>{
+            return `<div id="card">
+                        <div id="image">
+                            <img src="${el.Poster}">
+                        </div>
+                        <div id="details">
+                            <p id="title">${el.Title}</p>
+                            <p id="year">(${el.Year})</p>    
+                        </div>
+                    </div>`
+        }).join("");
+    }
+</script>
+</html>
