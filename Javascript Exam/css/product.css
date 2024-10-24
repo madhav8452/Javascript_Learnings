@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#box{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 30px;
+    background-color: black;
+}
+
+#box #card{
+    /* border: 1px solid black; */
+    width: 23%;
+    height: 550px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#box #card #image{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 300px;
+}
+
+#box #card #image img{
+    width: 100%;
+    height: 100%;
+}
+
+#box #card #details{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#box #card #details #title{
+    font-weight: bold;
+}
+
+#box #card #details #price{
+    font-weight: bold;
+    color: brown;
+}
+
+#box #card #details #rating{
+    color: grey;
+    font-weight: bold;
+}
+
+#box #card #details #rating i{
+    color: orange;
+}
+
+#box #card #details #btn{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#box #card #details #btn #editbtn{
+    border: 1px solid black;
+    width: 45%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#box #card #details #btn #editbtn:hover{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+#box #card #details #btn #deletebtn{
+    border: 1px solid brown;
+    width: 45%;
+    height: 100%;
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#box #card #details #btn #deletebtn:hover{
+    border: 1px solid brown;
+    background-color: white;
+    color: brown;
+}
+
+#editdiv{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: fixed;
+    top: -100vh;
+    transition: 1s;
+}
+
+#editdiv i{
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+}
+
+#editdiv #editform{
+    background-color: white;
+    width: 30%;
+    height: auto;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 0 0 10px grey inset;
+}
+
+#editdiv #editform h1{
+    margin-bottom: 20px;
+}
+
+#editdiv #editform label{
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#editdiv #editform input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 30px;
+    padding-left: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#editdiv #editform #editbtn{
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#editdiv #editform #editbtn:hover{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+.add{
+    border: 1px solid black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add #add{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.add #add:hover{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
