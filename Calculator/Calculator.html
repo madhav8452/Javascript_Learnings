@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #box{
+            border: 3px solid gray;
+            width: 400px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 10px;
+            background-color: rgba(85, 83, 83, 0.463);
+        }
+        #box #mainDisplay{
+            /* border: 1px solid black; */
+            width: 350px;
+            height: 100px;
+            box-shadow: inset 0 0 5px grey;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+        }
+        #box #mainDisplay #save{
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-right: 20px;
+        }
+        #box #mainDisplay #display{
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-right: 20px;
+        }
+        #box #switch{
+            /* border: 1px solid black; */
+            width: 350px;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-content: space-evenly;
+        }
+        #box #switch #clear{
+            border: 1px solid black;
+            width: 165px;
+            height: 50px;
+        }
+        #box #switch #back{
+            border: 1px solid black;
+            width: 165px;
+            height: 50px;
+        }
+        #box #switch #seven{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #eight{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #nine{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #divide{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #four{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #five{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #six{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #multiplication{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #one{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #two{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #three{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #minus{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #zero{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #dot{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #equal{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch #plus{
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+        }
+        #box #switch button{
+            border: 1px solid black;
+            background-color: white;
+            font-size: 20px;
+            color: black;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 0 5px grey;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #box #switch button:hover{
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="mainDisplay">
+            <div id="save"></div>
+            <div id="display"></div>
+        </div>
+
+        <div id="switch">
+            <button id="clear" onclick="clearAll()">C</button>
+            <button id="back" onclick="backspace()"><i class="fa-solid fa-delete-left"></i></button>
+
+            <button id="seven" onclick="number(7)">7</button>
+            <button id="eight" onclick="number(8)">8</button>
+            <button id="nine" onclick="number(9)">9</button>
+            <button id="divide" onclick="operator('/')">/</button>
+
+            <button id="four" onclick="number(4)">4</button>
+            <button id="five" onclick="number(5)">5</button>
+            <button id="six" onclick="number(6)">6</button>
+            <button id="multiplication" onclick="operator('*')">x</button>
+
+            <button id="one" onclick="number(1)">1</button>
+            <button id="two" onclick="number(2)">2</button>
+            <button id="three" onclick="number(3)">3</button>
+            <button id="minus" onclick="operator('-')">-</button>
+
+            <button id="dot" onclick="number('.')">.</button>
+            <button id="zero" onclick="number(0)">0</button>
+            <button id="equal" onclick="calculate()">=</button>
+            <button id="plus" onclick="operator('+')">+</button>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("display").innerHTML = "0"
+    document.getElementById("save").innerHTML = "";
+
+    let currentInput = "";
+    let previousInput = "";
+    let ope = "";
+    let ans;
+
+    function clearAll(){
+        currentInput = "";
+        previousInput = "";
+        document.getElementById("save").innerHTML = "";
+        document.getElementById("display").innerHTML = "0"
+    }
+
+    function backspace(){
+        currentInput = currentInput.slice(0, -1)
+        document.getElementById("display").innerHTML = currentInput       
+    }
+
+    function number(number){
+        currentInput += number
+        document.getElementById("display").innerHTML = currentInput       
+    }
+
+    function operator(operator){
+        previousInput = currentInput;
+        currentInput = "";
+        ope = operator
+
+        if(previousInput == ""){
+            previousInput = "0"
+        }
+        else{
+            previousInput = previousInput
+        }
+
+        document.getElementById("save").innerHTML = previousInput;
+        document.getElementById("display").innerHTML = operator       
+    }
+
+    function calculate(){
+        if(ope == "/"){
+            ans = eval(previousInput) / eval(currentInput)
+            document.getElementById("display").innerHTML = ans
+            document.getElementById("save").innerHTML = "";
+            currentInput = "";
+            previousInput = "";
+        }
+        else{
+            if(ope == "*"){
+                ans = eval(previousInput) * eval(currentInput)
+                document.getElementById("display").innerHTML = ans
+                document.getElementById("save").innerHTML = "";
+                currentInput = "";
+                previousInput = "";
+            }
+            else{
+                if(ope == "-"){
+                    ans = eval(previousInput) - eval(currentInput)
+                    document.getElementById("display").innerHTML = ans
+                    document.getElementById("save").innerHTML = "";
+                    currentInput = "";
+                    previousInput = "";
+                }
+                else{
+                    ans = eval(previousInput) + eval(currentInput)
+                    document.getElementById("display").innerHTML = ans
+                    document.getElementById("save").innerHTML = "";
+                    currentInput = "";
+                    previousInput = "";
+                }
+            }
+        }
+    }
+
+</script>
+</html>
+
