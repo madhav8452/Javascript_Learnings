@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body">
+    <div id="box" class="flex gap-4 p-4 bg-black">
+        <div id="options" class="w-[20%] bg-white rounded-lg p-10">
+            <h1 class="font-bold">Filter</h1>
+                <input type="checkbox" class="mt-5 me-2 cursor-pointer" id="fprice">Below Rs.50 <br>
+                <input type="checkbox" class="mt-2 me-2 cursor-pointer" id="fpriceA">Above Rs.50
+        </div>
+        <div id="products" class="w-[80%] flex flex-wrap gap-3 p-3"></div>
+    </div>
+    <div class="w-[100%] h-[100px] flex justify-center items-center">
+        <a href="add_products.html" class="border border-black w-[200px] h-[40px] rounded-lg flex justify-center items-center font-bold bg-black text-white hover:bg-white hover:text-black">ADD-PRODUCTS</a>
+    </div>
+    <div class="w-[100%] h-[100vh] fixed top-[-100vh] bg-white flex justify-center items-center duration-1000" id="editDiv">
+        <i class="fa-solid fa-xmark absolute top-10 right-10 border border-black w-[30px] h-[30px] rounded flex justify-center items-center bg-black text-white cursor-pointer" id="closeEdit"></i>
+        <form action="" class="border-2 border-[black] w-[500px] h-[600px] rounded-lg flex flex-col justify-center items-start p-12 bg-black text-white">
+            <h1 class="font-bold text-[30px] mb-12">EDIT-PRODUCTS</h1>
+            <label for="" class="font-bold mb-1">Title</label>
+            <input type="text" placeholder="Enter Product Title" class="border-b-2 border-black rounded-lg outline-none text-xs text-black w-[100%] h-[40px] ps-5 mb-5">
+            <label for="" class="font-bold mb-1">Price</label>
+            <input type="text" placeholder="Enter Product Title" class="border-b-2 border-black rounded-lg outline-none text-xs text-black w-[100%] h-[40px] ps-5 mb-5">
+            <label for="" class="font-bold mb-1">Description</label>
+            <input type="text" placeholder="Enter Product Title" class="border-b-2 border-black rounded-lg outline-none text-xs text-black w-[100%] h-[40px] ps-5 mb-5">
+            <input type="submit" class="border border-2 border-white w-[100px] h-[40px] rounded-lg mt-10 cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+        </form>    
+    </div>
+</body>
+<script>
+    fetch(`http://localhost:3000/products`)
+    .then((res)=>{
+        return res.json()
+    })
+    .then((res)=>{
+        console.log(res)
+        document.getElementById("products").innerHTML = view(res);
+
+        document.getElementById("fprice").addEventListener("change", ()=>{
+            let price = document.getElementById("fprice").checked
+            
+            if(price){
+                filter(res)
+                document.getElementById("products").innerHTML = view(filter(res));
+            }
+            else{
+                document.getElementById("products").innerHTML = view(res);
+            } 
+        })
+
+        document.getElementById("fpriceA").addEventListener("change", ()=>{
+            let price = document.getElementById("fpriceA").checked
+
+            if(price){
+                priceabove(res)
+                document.getElementById("products").innerHTML = view(priceabove(res));
+            }
+            else{
+                document.getElementById("products").innerHTML = view(res);
+            }
+        })
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+
+    function view(res){
+        return res.map((el)=>{
+            return `<div class="border border-black w-[24%] h-[500px] rounded-lg overflow-hidden p-4 bg-white" id="card">
+                        <div class="w-[100%] h-[300px] rounded-lg overflow-hidden">
+                            <img src=${el.image} class="w-[100%] h-[100%]">
+                        </div>
+                        <div class="w-[100%] h-[170px] p-5 text-center flex flex-col justify-evenly items-center">
+                            <p class="text-xs font-bold">${el.title}</p>
+                            <p class="text-xs font-bold text-[brown]">₹${el.price}</p>
+                            <div class="w-[100%] h-[40px] flex justify-between">
+                                <button class="border border-black w-[90px] h-[100%] rounded-lg bg-black text-white text-xs font-bold cursor-pointer hover:bg-white hover:text-black" id="edata" onclick="edata()">Edit</button>
+                                <button class="border w-[90px] h-[100%] rounded-lg bg-[brown] text-white text-xs font-bold cursor-pointer hover:bg-white hover:text-[brown] hover:border-[brown]" onclick="remove(${el.id})">Delete</button>
+                            </div>
+                        </div>
+                    </div>`
+        }).join("");
+    }
+
+    function remove(id){
+        console.log(id)
+        fetch(`http://localhost:3000/products/${id}`, {
+            method : "DELETE"
+        })
+    }
+
+    function filter(res){
+        return res.filter((el)=>{
+            if(el.price < 50){
+                return el
+            }
+        })
+    }
+
+    function priceabove(res){
+        return res.filter((el)=>{
+            if(el.price > 50){
+                return el
+            }
+        })
+    }
+
+</script>
+<script>
+    document.getElementById("closeEdit").addEventListener("click", ()=>{
+        document.getElementById("editDiv").style.position = `fixed`
+        document.getElementById("editDiv").style.top = `-100vh`
+    })
+</script>
+<script>
+    function edata(){
+        document.getElementById("editDiv").style.position = `fixed`
+        document.getElementById("editDiv").style.top = `0`
+    }
+</script>
+</html>
