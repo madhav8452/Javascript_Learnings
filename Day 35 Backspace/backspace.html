@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="click">Backspack</button>
+</body>
+<script>
+    let arr = "Madhav"
+    document.querySelector(".box").innerHTML = arr
+    
+    // USING POP METHOD
+
+    document.getElementById("click").addEventListener("click", ()=>{
+        let split = arr.split('')
+        split.pop();
+        console.log("split",split)
+        arr = split.join('')
+        console.log("arr",arr)
+        document.querySelector(".box").innerHTML = arr
+    })
+
+    // USING SPLICE METHOD
+
+    document.getElementById("click").addEventListener("click", ()=>{
+        let split = arr.split('')
+        split = split.slice(0, -1);
+        arr = split.join('')
+        console.log(arr)
+        document.querySelector(".box").innerHTML = arr
+    })
+
+</script>
+</html>
