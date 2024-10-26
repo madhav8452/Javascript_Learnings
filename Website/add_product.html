@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD_Product</title>
+    <link rel="stylesheet" href="css/add_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Image/Logo.png" alt="">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Try &quot;Liquid Lipstick&quot;">
+            <button><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </div>
+        <div class="login">
+            <a href="signup.html" target="_blank"><p><i class="fa-solid fa-circle-user"></i> Login/Register</p></a>
+        </div>
+        <div class="icons">
+            <i class="fa-regular fa-heart"></i>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fa-solid fa-star-of-life"></i>
+        </div>
+    </header>
+    <div class="ulli">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li>ABOUT</li>
+            <li><a href="product.html">PRODUCTS</a></li>
+            <li>SUGAR PLAY</li>
+            <li>LIPS</li>
+            <li>EYES</li>
+            <li>FACE</li>
+            <li>NAILS</li>
+            <li>SKINCARE</li>
+            <li>ACCESSORIES</li>
+            <li>GIFTING</li>
+            <li>OFFERS</li>
+            <li>BLOG</li>
+        </ul>
+    </div>
+
+    <div class="productContent">
+        <div class="filter">
+            <img src="Image/Footer_sugar_icon.svg" alt="">
+        </div>
+        
+        <div class="product" style="background-image: url(Image/loginPageBackGroundTexture.jpg);">
+            <h2>ADD PRODUCTS</h2>
+            <form action="" id="addproducts">
+                <label for="">Title</label>
+                <input type="text" placeholder="Enter Title" id="title">
+                <label for="">Price</label>
+                <input type="text" placeholder="Enter Price" id="price">
+                <label for="description">Description</label>
+                <input type="text" placeholder="Enter Description" id="description">
+                <label for="">Image</label>
+                <input type="text" placeholder="Enter Image Path" id="image">
+                <input type="submit" id="productSubmit">
+            </form>
+        </div>
+
+    </div>
+</body>
+<script src="Js/addProducts.js"></script>
+</html>

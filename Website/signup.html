@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <div class="img"><img src="Image/Footer_sugar_icon.svg" alt=""></div>
+    <div class="signupdiv" style="background-image: url(Image/loginPageBackGroundTexture.jpg);">
+        <img src="Image/Hi!.jpg" alt="">
+        <h3>Login/Sign Up Using Email</h3>
+        <div class="form">
+            <label for="">Username</label>
+            <input type="text" id="userName" placeholder="Enter Username" id="">
+            <p id="wrongUsername"></p><label for="">Email</label>
+            <input type="text" id="email" placeholder="Enter email">
+            <p id="wrongEmail"></p>
+            <label for="">Password</label>
+            <input type="text" id="password" placeholder="Enter password">
+            <p id="wrongPassword"></p>
+        </div>
+        <p>Registering for this site allows you to access your order status and history. Just fill in the above fields, and we'll get <br> a new account set up for you in no time. We will only ask you for information necessary to make the purchase <br> process faster and easier.</p>
+        <button id="signupSubmit">Submit</button>
+        <a href="login.html" id="gotoLogin">Already have an account? Login</a>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="Js/signup.js"></script>
+</html>

@@ -1,0 +1,211 @@
+{
+  "users": [
+    {
+      "id": "7a1a",
+      "username": "Madhav9",
+      "email": "Madhav@gmail.com",
+      "password": "Madhav@12345"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Matte As Hell Mini Crayon Lipstick",
+      "price": 599,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/1.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 120
+      }
+    },
+    {
+      "id": "2",
+      "title": "Matte Attack Transferproof Lipstick - 01 Boldplay (Cardinal Pink)",
+      "price": 749,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/2.jpg",
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      }
+    },
+    {
+      "id": "3",
+      "title": "Mousse Muse Lip Cream - 01 Backlit Nude",
+      "price": 555,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/3.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": "4",
+      "title": "Nothing Else Matter Longwear Lipstick - 01 Browning Glory (Caramel Nude)",
+      "price": 599,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/4.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "5",
+      "title": "Matte As Hell Crayon Lipstick - 01 Scarlett O'Hara (Red) | 2.8 gm",
+      "price": 899,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/5.jpg",
+      "rating": {
+        "rate": 4.6,
+        "count": 400
+      }
+    },
+    {
+      "id": "6",
+      "title": "SUGAR POP Ultrastay Transferproof Lipstick - 01 Pink Paradise",
+      "price": 199,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/6.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 70
+      }
+    },
+    {
+      "id": "7",
+      "title": "Matte Attack Transferproof Lipstick - 04 Maroon Vibe (Dark Red)",
+      "price": 749,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/7.jpg",
+      "rating": {
+        "rate": 3,
+        "count": 400
+      }
+    },
+    {
+      "title": "Matte Attack Transferproof Lipstick - 05 Tan Halen (Chocolate Brown)",
+      "price": 849,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/8.jpg",
+      "rating": {
+        "rate": "1.9",
+        "count": "100"
+      },
+      "id": "8"
+    },
+    {
+      "id": "9",
+      "title": "Matte Attack Transferproof Lipstick - 03 The Grandberries (Dark Berry)",
+      "price": 749,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/9.jpg",
+      "rating": {
+        "rate": 3.3,
+        "count": 203
+      }
+    },
+    {
+      "id": "10",
+      "title": "Mousse Muse Lip Cream - 01 Backlit Nude",
+      "price": 555,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/10.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 470
+      }
+    },
+    {
+      "id": "11",
+      "title": "Aquaholic Hydrating Foundation - 07 Vanilla Latte",
+      "price": 899,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/11.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 319
+      }
+    },
+    {
+      "title": "Aquaholic Hydrating Foundation - 07 Vanilla Latte",
+      "price": 699,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/12.jpg",
+      "rating": {
+        "rate": "4.8",
+        "count": "400"
+      },
+      "id": "12"
+    },
+    {
+      "title": "Ace Of Face Foundation Stick - 50 Mocha (Medium Tan - Golden Undertone)",
+      "price": 899,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/13.jpg",
+      "rating": {
+        "rate": "2.9",
+        "count": "250"
+      },
+      "id": "13"
+    },
+    {
+      "title": "Ace Of Face Foundation Stick - 17 Raf (Light - Golden Undertone)",
+      "price": 1099,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/14.jpg",
+      "rating": {
+        "rate": "2.2",
+        "count": "150"
+      },
+      "id": "14"
+    },
+    {
+      "id": "15",
+      "title": "Bling Leader Illuminating Moisturizer - 01 Gold Diggin' - warm gold with a pearl finish",
+      "price": 699,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/15.jpg",
+      "rating": {
+        "rate": 2.6,
+        "count": 235
+      }
+    },
+    {
+      "id": "16",
+      "title": "Tip Tac Toe Nail Lacquer Classic - 01 Pink Positive",
+      "price": 199,
+      "description": "Get ready for lip matte-gic! Your beloved and our bestseller, Matte As Hell Crayon Lipstick is here in a mini size. The super-pigmented, creamy and smooth formula slides onto your lips like a breeze, leaving you with that matte finish you've always dreamt about. Not just this, experience one swipe intense colour payoff that stays and slays  from dusk to dawn.",
+      "image": "productimg/16.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 340
+      }
+    },
+    {
+      "title": "Tip Tac Toe Nail Lacquer Classic - 01 Pink Positive",
+      "price": 199,
+      "description": "Poke a friend. Scribble on sand. Shush a noisemaker. Like us, if you are someone who lets your fingers do the talking – then you will absolutely heart the new and improved Tip Tac Toe Nail Lacquer Classic range. Formulated in Luxembourg (Europe), these 100% chip-resistant, streak-free nail lacquers will make sure that your tips are always in focus!",
+      "image": "productimg/17.jpg",
+      "rating": {
+        "rate": "4.8",
+        "count": "800"
+      },
+      "id": "c629"
+    },
+    {
+      "title": "SUGAR Prime Sublime Primer - Brightening",
+      "price": 499,
+      "description": "Find Your Prime Sublime!  Introducing next-gen makeup and skincare hybrid that supercharges your complexion! Prime Sublime Primer with its innovative formula promises base perfection and skin therapy. Available in 4 variants, these face primers with a dreamy whipped cream lightweight texture blend into the skin with ease and help your makeup adhere all day long. Indulge in great skin perks, from glow-boosting, hydration to tackling open pores, dullness and uneven skin tone. Prime Sublime Face Primers are boosted with the goodness of superfoods like kale, blueberry, avocado along with actives like hyaluronic acid, niacinamide and so much more. These multi-tasking face primers with a subtle tint to them, improve skin texture, boost hydration levels, control excess sebum, protect skin barrier and give you a poreless, smooth canvas for your makeup to go flawless!   ",
+      "image": "productimg/18.jpg",
+      "rating": {
+        "rate": "3.8",
+        "count": "756"
+      },
+      "id": "d3cd"
+    }
+  ],
+  "cart": []
+}
